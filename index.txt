@@ -1,0 +1,4402 @@
+openapi: 3.0.3
+info:
+  title: Yebo
+  description: |-
+    Esta es una descripcion de la documentacion
+
+    - Punto 1
+    - Punto 2
+        
+
+    [link](www.google.com)
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: '{{server}}'
+paths:
+  /driver/{driverId}/attendance:
+    post:
+      tags:
+        - Driver
+        - Attendance
+      summary: Create attendance
+      description: |-
+        # Enpoint Crear asistencia
+
+        Esta es una descripcion a nivel endpoint
+      operationId: createAttendance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: string
+                  example: ''
+                date:
+                  type: string
+                  example: '2021-09-09'
+                multiply:
+                  type: string
+                  example: '100'
+                registerType:
+                  type: string
+                  example: asistencia
+            example:
+              comment: ''
+              date: '2021-09-09'
+              multiply: '100'
+              registerType: asistencia
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+        - Driver
+        - Attendance
+      summary: Remove attendance
+      description: Remove attendance
+      operationId: removeAttendance
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+        - Driver
+        - Attendance
+      summary: Update attendance
+      description: Update attendance
+      operationId: updateAttendance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: string
+                  example: ''
+                date:
+                  type: string
+                  example: '2021-09-02'
+                multiply:
+                  type: string
+                  example: '125'
+                registerType:
+                  type: string
+                  example: asistencia
+            example:
+              comment: ''
+              date: '2021-09-02'
+              multiply: '125'
+              registerType: asistencia
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: driverId
+        in: path
+        required: true
+        schema:
+          type: string
+  /driver:
+    get:
+      tags:
+        - Driver
+      summary: Read Drivers
+      description: Read Drivers
+      operationId: readDrivers
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: '{{driverId}}'
+      responses:
+        '200':
+          description: Read Driver
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '2300'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 17:57:21 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"8fc-4nKcOAF+5TnhktzhWxJQwPIqb7A"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Se encontraron múltiples "Drivers"
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        __v:
+                          type: number
+                          example: 0
+                        _id:
+                          type: string
+                          example: 610ca8447d468c2d1493b840
+                        bankId:
+                          type: object
+                          properties:
+                            __v:
+                              type: number
+                              example: 0
+                            _id:
+                              type: string
+                              example: 6112d70bec35930a6c724fc3
+                            createdAt:
+                              type: string
+                              example: '2021-08-10T19:44:11.031Z'
+                            name:
+                              type: string
+                              example: bbva
+                            updatedAt:
+                              type: string
+                              example: '2021-08-10T19:44:11.031Z'
+                        clabe:
+                          type: string
+                          example: as6d4s68d4as86d4sa
+                        createdAt:
+                          type: string
+                          example: '2021-08-06T03:11:00.605Z'
+                        curp:
+                          type: string
+                          example: vamd900415hnllzm04
+                        driverType:
+                          type: string
+                          example: nomina
+                        infonavitDiscount:
+                          type: number
+                          example: 0
+                        jobTitle:
+                          type: object
+                          properties:
+                            __v:
+                              type: number
+                              example: 0
+                            _id:
+                              type: string
+                              example: 6112d709ec35930a6c724fb8
+                            amount:
+                              type: number
+                              example: 600
+                            createdAt:
+                              type: string
+                              example: '2021-08-10T19:44:09.978Z'
+                            name:
+                              type: string
+                              example: chofer
+                            updatedAt:
+                              type: string
+                              example: '2021-08-10T19:44:09.978Z'
+                        nss:
+                          type: string
+                          example: '00000000000'
+                        rfc:
+                          type: string
+                          example: vamd900415lc8
+                        updatedAt:
+                          type: string
+                          example: '2021-08-06T03:11:00.605Z'
+                        userId:
+                          type: object
+                          properties:
+                            _id:
+                              type: string
+                              example: 61119d64779b2926b47be2ac
+                            confirmed:
+                              type: boolean
+                              example: false
+                            deleted:
+                              type: boolean
+                              example: false
+                            email:
+                              type: string
+                              example: jose.valles+3@onephase.com
+                            name:
+                              type: string
+                              example: jose dominga valles mesa
+                            role:
+                              type: string
+                              example: 610c0e27a7892c1681b201f3
+                        vehicles:
+                          type: array
+                          items: {}
+                          example: []
+                        workEntryDate:
+                          type: string
+                          example: '1999-12-12T00:00:00.000Z'
+                    example:
+                      - __v: 0
+                        _id: 610ca8447d468c2d1493b840
+                        bankId:
+                          __v: 0
+                          _id: 6112d70bec35930a6c724fc3
+                          createdAt: '2021-08-10T19:44:11.031Z'
+                          name: bbva
+                          updatedAt: '2021-08-10T19:44:11.031Z'
+                        createdAt: '2021-08-06T03:11:00.605Z'
+                        curp: vamd900415hnllzm04
+                        driverType: nomina
+                        infonavitDiscount: 0
+                        jobTitle:
+                          __v: 0
+                          _id: 6112d709ec35930a6c724fb8
+                          amount: 600
+                          createdAt: '2021-08-10T19:44:09.978Z'
+                          name: chofer
+                          updatedAt: '2021-08-10T19:44:09.978Z'
+                        nss: '00000000000'
+                        rfc: vamd900415lc8
+                        updatedAt: '2021-08-06T03:11:00.605Z'
+                        userId:
+                          _id: 61119d64779b2926b47be2ac
+                          confirmed: false
+                          deleted: false
+                          email: jose.valles+3@onephase.com
+                          name: jose dominga valles mesa
+                          role: 610c0e27a7892c1681b201f3
+                        vehicles: []
+                        workEntryDate: '1999-12-12T00:00:00.000Z'
+                      - __v: 0
+                        _id: 61114bb3b39448054883d9eb
+                        createdAt: '2021-08-09T15:37:23.826Z'
+                        curp: mard900415hnllzm06
+                        driverType: ruta
+                        infonavitDiscount: 0
+                        nss: '12345679999'
+                        rfc: mard900415lc8
+                        updatedAt: '2021-08-09T15:37:23.826Z'
+                        userId:
+                          _id: 61119dd4779b2926b47be2e0
+                          confirmed: false
+                          deleted: false
+                          email: maria@onephase.com
+                          name: maria renteria
+                          role: 610c0e27a7892c1681b201f3
+                        vehicles: []
+                        workEntryDate: '1999-12-12T00:00:00.000Z'
+                      - __v: 0
+                        _id: 6112f3f1ec564e49f72faa7c
+                        clabe: as6d4s68d4as86d4sa
+                        createdAt: '2021-08-10T21:47:29.586Z'
+                        curp: vamd900415hnllzm13
+                        driverType: ruta
+                        infonavitDiscount: 10
+                        nss: '12345678906'
+                        rfc: vamd900415lc2
+                        updatedAt: '2021-08-10T21:47:29.586Z'
+                        userId:
+                          _id: 6112f3f1ec564e49f72faa7a
+                          confirmed: false
+                          deleted: false
+                          email: cesar@yopmail.com
+                          name: cesar gutierrez
+                          role: 610c0e27a7892c1681b201f3
+                        vehicles: []
+                        workEntryDate: '2021-08-01T00:00:00.000Z'
+                      - __v: 0
+                        _id: 61155fa4f1f2ed4778f601b2
+                        clabe: as6d4s68d4as86d4sa
+                        createdAt: '2021-08-12T17:51:32.531Z'
+                        curp: vamd900415hnllzm14
+                        driverType: ruta
+                        infonavitDiscount: 0
+                        nss: '12345678914'
+                        rfc: vamd900415lc4
+                        updatedAt: '2021-08-12T17:52:49.392Z'
+                        userId:
+                          _id: 61155fa4f1f2ed4778f601b0
+                          confirmed: false
+                          deleted: false
+                          email: jose.valles+4@onephase.com
+                          name: jose domingo valles mesa
+                          role: 610c0e27a7892c1681b201f3
+                        vehicles: []
+                        workEntryDate: '1999-12-12T00:00:00.000Z'
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Read Driver:
+                  value:
+                    message: Se encontraron múltiples "Drivers"
+                    payload:
+                      - __v: 0
+                        _id: 610ca8447d468c2d1493b840
+                        bankId:
+                          __v: 0
+                          _id: 6112d70bec35930a6c724fc3
+                          createdAt: '2021-08-10T19:44:11.031Z'
+                          name: bbva
+                          updatedAt: '2021-08-10T19:44:11.031Z'
+                        createdAt: '2021-08-06T03:11:00.605Z'
+                        curp: vamd900415hnllzm04
+                        driverType: nomina
+                        infonavitDiscount: 0
+                        jobTitle:
+                          __v: 0
+                          _id: 6112d709ec35930a6c724fb8
+                          amount: 600
+                          createdAt: '2021-08-10T19:44:09.978Z'
+                          name: chofer
+                          updatedAt: '2021-08-10T19:44:09.978Z'
+                        nss: '00000000000'
+                        rfc: vamd900415lc8
+                        updatedAt: '2021-08-06T03:11:00.605Z'
+                        userId:
+                          _id: 61119d64779b2926b47be2ac
+                          confirmed: false
+                          deleted: false
+                          email: jose.valles+3@onephase.com
+                          name: jose dominga valles mesa
+                          role: 610c0e27a7892c1681b201f3
+                        vehicles: []
+                        workEntryDate: '1999-12-12T00:00:00.000Z'
+                      - __v: 0
+                        _id: 61114bb3b39448054883d9eb
+                        createdAt: '2021-08-09T15:37:23.826Z'
+                        curp: mard900415hnllzm06
+                        driverType: ruta
+                        infonavitDiscount: 0
+                        nss: '12345679999'
+                        rfc: mard900415lc8
+                        updatedAt: '2021-08-09T15:37:23.826Z'
+                        userId:
+                          _id: 61119dd4779b2926b47be2e0
+                          confirmed: false
+                          deleted: false
+                          email: maria@onephase.com
+                          name: maria renteria
+                          role: 610c0e27a7892c1681b201f3
+                        vehicles: []
+                        workEntryDate: '1999-12-12T00:00:00.000Z'
+                      - __v: 0
+                        _id: 6112f3f1ec564e49f72faa7c
+                        clabe: as6d4s68d4as86d4sa
+                        createdAt: '2021-08-10T21:47:29.586Z'
+                        curp: vamd900415hnllzm13
+                        driverType: ruta
+                        infonavitDiscount: 10
+                        nss: '12345678906'
+                        rfc: vamd900415lc2
+                        updatedAt: '2021-08-10T21:47:29.586Z'
+                        userId:
+                          _id: 6112f3f1ec564e49f72faa7a
+                          confirmed: false
+                          deleted: false
+                          email: cesar@yopmail.com
+                          name: cesar gutierrez
+                          role: 610c0e27a7892c1681b201f3
+                        vehicles: []
+                        workEntryDate: '2021-08-01T00:00:00.000Z'
+                      - __v: 0
+                        _id: 61155fa4f1f2ed4778f601b2
+                        clabe: as6d4s68d4as86d4sa
+                        createdAt: '2021-08-12T17:51:32.531Z'
+                        curp: vamd900415hnllzm14
+                        driverType: ruta
+                        infonavitDiscount: 0
+                        nss: '12345678914'
+                        rfc: vamd900415lc4
+                        updatedAt: '2021-08-12T17:52:49.392Z'
+                        userId:
+                          _id: 61155fa4f1f2ed4778f601b0
+                          confirmed: false
+                          deleted: false
+                          email: jose.valles+4@onephase.com
+                          name: jose domingo valles mesa
+                          role: 610c0e27a7892c1681b201f3
+                        vehicles: []
+                        workEntryDate: '1999-12-12T00:00:00.000Z'
+                    success: true
+        '422':
+          description: Read Driver
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '117'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Wed, 11 Aug 2021 17:19:36 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"75-GfqlbDibw32BpF/matM8R52GF9s"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        location:
+                          type: string
+                          example: body
+                        msg:
+                          type: string
+                          example: El tipo de chofer debe ser Ruta o Nomina
+                        param:
+                          type: string
+                          example: driverType
+                        value:
+                          type: string
+                          example: otro
+                    example:
+                      - location: body
+                        msg: El tipo de chofer debe ser Ruta o Nomina
+                        param: driverType
+                        value: otro
+              examples:
+                Read Driver:
+                  value:
+                    errors:
+                      - location: body
+                        msg: El tipo de chofer debe ser Ruta o Nomina
+                        param: driverType
+                        value: otro
+    post:
+      tags:
+        - Driver
+      summary: New Driver
+      description: New Driver
+      operationId: newDriver
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bankId:
+                  type: string
+                  example: 611c43d24f93802f7a79b2c1
+                clabe:
+                  type: string
+                  example: '012580015701524744'
+                curp:
+                  type: string
+                  example: LOGA881223MNLLZM02
+                driverType:
+                  type: string
+                  example: ruta
+                email:
+                  type: string
+                  example: lupe.down+2@app.com
+                infonavitDiscount:
+                  type: number
+                  example: 500
+                isSupplier:
+                  type: string
+                  example: 'false'
+                jobTitleId:
+                  type: string
+                  example: 6112d709ec35930a6c724fb8
+                name:
+                  type: string
+                  example: Luipta Downs downs
+                nss:
+                  type: string
+                  example: '15874965822'
+                phone:
+                  type: string
+                  example: '1234567890'
+                rfc:
+                  type: string
+                  example: LOGA881223DF1
+                stationId:
+                  type: string
+                  example: 61bcc510214d100d3c4cc792
+                workEntryDate:
+                  type: string
+                  example: '2020-11-11'
+            example:
+              bankId: 611c43d24f93802f7a79b2c1
+              clabe: '012580015701524744'
+              curp: LOGA881223MNLLZM02
+              driverType: ruta
+              email: lupe.down+2@app.com
+              infonavitDiscount: 500
+              isSupplier: 'false'
+              jobTitleId: 6112d709ec35930a6c724fb8
+              name: Luipta Downs downs
+              nss: '15874965822'
+              phone: '1234567890'
+              rfc: LOGA881223DF1
+              stationId: 61bcc510214d100d3c4cc792
+              workEntryDate: '2020-11-11'
+      responses:
+        '200':
+          description: ''
+  /driver/{driverId}:
+    get:
+      tags:
+        - Driver
+      summary: Read driver
+      description: Read driver
+      operationId: readDriver
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Driver
+      summary: Reactivate driver
+      description: Reactivate driver
+      operationId: reactivateDriver
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+        - Driver
+      summary: Delete Driver
+      description: Delete Driver
+      operationId: deleteDriver
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+        - Driver
+      summary: Update Driver
+      description: Update Driver
+      operationId: updateDriver
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bankId:
+                  type: string
+                  example: 611c43d24f93802f7a79b2c1
+                clabe:
+                  type: string
+                  example: '012580015701524744'
+                curp:
+                  type: string
+                  example: LOGA881223HNLLZM05
+                driverType:
+                  type: string
+                  example: ruta
+                email:
+                  type: string
+                  example: mario.lopez.gamez@app.com
+                infonavitDiscount:
+                  type: number
+                  example: 500
+                isSupplier:
+                  type: string
+                  example: 'true'
+                jobTitleId:
+                  type: string
+                  example: 6112d709ec35930a6c724fb8
+                name:
+                  type: string
+                  example: Mario Lopez Gamez
+                nss:
+                  type: string
+                  example: '15874965826'
+                phone:
+                  type: string
+                  example: '1234567890'
+                rfc:
+                  type: string
+                  example: LOGA881223DF2
+                stationId:
+                  type: string
+                  example: 61bcc510214d100d3c4cc793
+                workEntryDate:
+                  type: string
+                  example: '2020-11-11'
+            example:
+              bankId: 611c43d24f93802f7a79b2c1
+              clabe: '012580015701524744'
+              curp: LOGA881223HNLLZM05
+              driverType: ruta
+              email: mario.lopez.gamez@app.com
+              infonavitDiscount: 500
+              isSupplier: 'true'
+              jobTitleId: 6112d709ec35930a6c724fb8
+              name: Mario Lopez Gamez
+              nss: '15874965826'
+              phone: '1234567890'
+              rfc: LOGA881223DF2
+              stationId: 61bcc510214d100d3c4cc793
+              workEntryDate: '2020-11-11'
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: driverId
+        in: path
+        required: true
+        schema:
+          type: string
+  /driver/filter:
+    post:
+      tags:
+        - Driver
+      summary: Read Drivers with filters
+      description: Read Drivers with filters
+      operationId: readDriversWithFilters
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dateFormat:
+                  type: string
+                  example: DD/MM/YYYY
+                filters:
+                  type: object
+                  properties:
+                    $or:
+                      type: array
+                      items:
+                        type: string
+                        example: userId.name
+                      example:
+                        - userId.name
+                    driverType:
+                      type: string
+                      example: nomina
+                limit:
+                  type: number
+                  example: 10
+                page:
+                  type: number
+                  example: 1
+                search:
+                  type: string
+                  example: ''
+                sort:
+                  type: object
+                  properties:
+                    createdAt:
+                      type: number
+                      example: -1
+            example:
+              dateFormat: DD/MM/YYYY
+              filters:
+                $or:
+                  - userId.name
+                driverType: nomina
+              limit: 10
+              page: 1
+              search: ''
+              sort:
+                createdAt: -1
+      responses:
+        '200':
+          description: Read Drivers with filters
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '331'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 17:53:57 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"14b-p9ctKhOHEetW4qfqO/OEVmCfkJw"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Multiple "Drivers" items were found
+                  payload:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            _id:
+                              type: string
+                              example: 61155fa4f1f2ed4778f601b2
+                            createdAt:
+                              type: string
+                              example: '2021-08-12T17:51:32.531Z'
+                            curp:
+                              type: string
+                              example: vamd900415hnllzm14
+                            userId:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                  example: jose domingo valles mesa
+                        example:
+                          - _id: 61155fa4f1f2ed4778f601b2
+                            createdAt: '2021-08-12T17:51:32.531Z'
+                            curp: vamd900415hnllzm14
+                            userId:
+                              name: jose domingo valles mesa
+                      pagination:
+                        type: object
+                        properties:
+                          currentPage:
+                            type: number
+                            example: 1
+                          hasNext:
+                            type: boolean
+                            example: false
+                          hasPrevious:
+                            type: boolean
+                            example: false
+                          totalItems:
+                            type: number
+                            example: 1
+                          totalPages:
+                            type: number
+                            example: 1
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Read Drivers with filters:
+                  value:
+                    message: Multiple "Drivers" items were found
+                    payload:
+                      data:
+                        - _id: 61155fa4f1f2ed4778f601b2
+                          createdAt: '2021-08-12T17:51:32.531Z'
+                          curp: vamd900415hnllzm14
+                          userId:
+                            name: jose domingo valles mesa
+                      pagination:
+                        currentPage: 1
+                        hasNext: false
+                        hasPrevious: false
+                        totalItems: 1
+                        totalPages: 1
+                    success: true
+  /driver/{driverId}/vehicle:
+    post:
+      tags:
+        - Driver
+      summary: Create driver vehicle
+      description: Create driver vehicle
+      operationId: createDriverVehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carPlate:
+                  type: string
+                  example: FGT584X
+                type:
+                  type: string
+                  example: automovil
+            example:
+              carPlate: FGT584X
+              type: automovil
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: driverId
+        in: path
+        required: true
+        schema:
+          type: string
+  /driver/{driverId}/vehicle/batch:
+    post:
+      tags:
+        - Driver
+      summary: Create driver vehicle batch
+      description: Create driver vehicle batch
+      operationId: createDriverVehicleBatch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                vehicles:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      carPlate:
+                        type: string
+                        example: FGT584D
+                      type:
+                        type: string
+                        example: automovil
+                  example:
+                    - carPlate: FGT584D
+                      type: automovil
+                    - carPlate: AD745C
+                      type: van
+            example:
+              vehicles:
+                - carPlate: FGT584D
+                  type: automovil
+                - carPlate: AD745C
+                  type: van
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: driverId
+        in: path
+        required: true
+        schema:
+          type: string
+  /driver/{driverId}/vehicle/assign:
+    post:
+      tags:
+        - Driver
+      summary: Assign vehicle
+      description: Assign vehicle
+      operationId: assignVehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                vehicleId:
+                  type: string
+                  example: 61296214d3702834eef113ba
+            example:
+              vehicleId: 61296214d3702834eef113ba
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: driverId
+        in: path
+        required: true
+        schema:
+          type: string
+  /driver/{driverId}/vehicle/unassign:
+    post:
+      tags:
+        - Driver
+      summary: Unassign vehicle
+      description: Unassign vehicle
+      operationId: unassignVehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                vehicleId:
+                  type: string
+                  example: 611d7192bb210e4b1c44a49d
+            example:
+              vehicleId: 611d7192bb210e4b1c44a49d
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: driverId
+        in: path
+        required: true
+        schema:
+          type: string
+  /driver/{driverId}/vehicle/{vehicleId}:
+    delete:
+      tags:
+        - Driver
+      summary: Delete vehicle
+      description: Delete vehicle
+      operationId: deleteVehicle
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: driverId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: vehicleId
+        in: path
+        required: true
+        schema:
+          type: string
+  /driver/vehicle/van:
+    get:
+      tags:
+        - Driver
+      summary: Find drivers by vehicle
+      description: Find drivers by vehicle
+      operationId: findDriversByVehicle
+      responses:
+        '200':
+          description: ''
+  /partner/:
+    post:
+      tags:
+        - Partner
+      summary: New Partner
+      description: New Partner
+      operationId: newPartner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bankId:
+                  type: string
+                  example: 611c43d24f93802f7a79b2c1
+                clabe:
+                  type: string
+                  example: '012580015701524744'
+                curp:
+                  type: string
+                  example: PSDD660513HNLLZM89
+                email:
+                  type: string
+                  example: pedro2@app.com
+                name:
+                  type: string
+                  example: Pedro paramo2
+                phone:
+                  type: number
+                  example: 1234567890
+            example:
+              bankId: 611c43d24f93802f7a79b2c1
+              clabe: '012580015701524744'
+              curp: PSDD660513HNLLZM89
+              email: pedro2@app.com
+              name: Pedro paramo2
+              phone: 1234567890
+      responses:
+        '201':
+          description: New Partner
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '319'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 18:00:39 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"13f-ZbvgHB0yFuCQ6P0cNC09IGmFHgM"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Socio fue creado
+                  payload:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 611561c7f1f2ed4778f601ec
+                      bankId:
+                        type: string
+                        example: 5f56bf2442a3ec3f2b619245
+                      clabe:
+                        type: string
+                        example: '123456789012345678'
+                      createdAt:
+                        type: string
+                        example: '2021-08-12T18:00:39.089Z'
+                      curp:
+                        type: string
+                        example: mamd900415hnllzm12
+                      updatedAt:
+                        type: string
+                        example: '2021-08-12T18:00:39.089Z'
+                      userId:
+                        type: string
+                        example: 611561c7f1f2ed4778f601ea
+                      vehicles:
+                        type: array
+                        items: {}
+                        example: []
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                New Partner:
+                  value:
+                    message: Socio fue creado
+                    payload:
+                      __v: 0
+                      _id: 611561c7f1f2ed4778f601ec
+                      bankId: 5f56bf2442a3ec3f2b619245
+                      clabe: '123456789012345678'
+                      createdAt: '2021-08-12T18:00:39.089Z'
+                      curp: mamd900415hnllzm12
+                      updatedAt: '2021-08-12T18:00:39.089Z'
+                      userId: 611561c7f1f2ed4778f601ea
+                      vehicles: []
+                    success: true
+        '409':
+          description: New Partner
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '90'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 18:01:53 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"5a-VLPH9CNJN0Ol+s8glExLfzQRV+k"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Email tiene conflictos
+                  payload:
+                    type: string
+                    example: El correo ya está en uso
+                  success:
+                    type: boolean
+                    example: false
+              examples:
+                New Partner:
+                  value:
+                    message: Email tiene conflictos
+                    payload: El correo ya está en uso
+                    success: false
+  /partner:
+    get:
+      tags:
+        - Partner
+      summary: Read Partners
+      description: Read Partners
+      operationId: readPartners
+      parameters:
+        - name: name
+          in: query
+          schema:
+            type: string
+            example: cos pe
+          description: String to find a partner by name
+        - name: deleted
+          in: query
+          schema:
+            type: string
+            example: 'false'
+          description: if true searches in deleted drivers
+      responses:
+        '200':
+          description: Read Partner
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '439'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 18:03:03 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"1b7-usFmtk2olIf1pJ8H7ki4JIm6QMI"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Se encontraron múltiples "Socios"
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        __v:
+                          type: number
+                          example: 0
+                        _id:
+                          type: string
+                          example: 611561c7f1f2ed4778f601ec
+                        clabe:
+                          type: string
+                          example: '123456789012345678'
+                        createdAt:
+                          type: string
+                          example: '2021-08-12T18:00:39.089Z'
+                        curp:
+                          type: string
+                          example: mamd900415hnllzm12
+                        updatedAt:
+                          type: string
+                          example: '2021-08-12T18:00:39.089Z'
+                        userId:
+                          type: object
+                          properties:
+                            _id:
+                              type: string
+                              example: 611561c7f1f2ed4778f601ea
+                            confirmed:
+                              type: boolean
+                              example: false
+                            deleted:
+                              type: boolean
+                              example: false
+                            email:
+                              type: string
+                              example: marcos.perez@onephase.com
+                            name:
+                              type: string
+                              example: marcos perez
+                            role:
+                              type: string
+                              example: 610c0e27a7892c1681b201f3
+                        vehicles:
+                          type: array
+                          items: {}
+                          example: []
+                    example:
+                      - __v: 0
+                        _id: 611561c7f1f2ed4778f601ec
+                        clabe: '123456789012345678'
+                        createdAt: '2021-08-12T18:00:39.089Z'
+                        curp: mamd900415hnllzm12
+                        updatedAt: '2021-08-12T18:00:39.089Z'
+                        userId:
+                          _id: 611561c7f1f2ed4778f601ea
+                          confirmed: false
+                          deleted: false
+                          email: marcos.perez@onephase.com
+                          name: marcos perez
+                          role: 610c0e27a7892c1681b201f3
+                        vehicles: []
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Read Partner:
+                  value:
+                    message: Se encontraron múltiples "Socios"
+                    payload:
+                      - __v: 0
+                        _id: 611561c7f1f2ed4778f601ec
+                        clabe: '123456789012345678'
+                        createdAt: '2021-08-12T18:00:39.089Z'
+                        curp: mamd900415hnllzm12
+                        updatedAt: '2021-08-12T18:00:39.089Z'
+                        userId:
+                          _id: 611561c7f1f2ed4778f601ea
+                          confirmed: false
+                          deleted: false
+                          email: marcos.perez@onephase.com
+                          name: marcos perez
+                          role: 610c0e27a7892c1681b201f3
+                        vehicles: []
+                    success: true
+  /partner/{partnerId}:
+    get:
+      tags:
+        - Partner
+      summary: Read partner
+      description: Read partner
+      operationId: readPartner
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+        - Partner
+      summary: Delete partner
+      description: Delete partner
+      operationId: deletePartner
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+        - Partner
+      summary: Update partner
+      description: Update partner
+      operationId: updatePartner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bankId:
+                  type: string
+                  example: 611c43d24f93802f7a79b2c1
+                clabe:
+                  type: string
+                  example: '012580015701524744'
+                curp:
+                  type: string
+                  example: PSDD660513HNLLZM89
+                email:
+                  type: string
+                  example: pedro2@app.com
+                name:
+                  type: string
+                  example: Pedro paramo2
+                phone:
+                  type: number
+                  example: 1234567890
+            example:
+              bankId: 611c43d24f93802f7a79b2c1
+              clabe: '012580015701524744'
+              curp: PSDD660513HNLLZM89
+              email: pedro2@app.com
+              name: Pedro paramo2
+              phone: 1234567890
+      responses:
+        '200':
+          description: Update partner
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '80'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 18:03:38 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"50-NNu9Zo0pvR1j/g0rZB5CeoS6P+Y"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Socio ha sido actualizado
+                  payload:
+                    type: string
+                    example: Socio editado
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Update partner:
+                  value:
+                    message: Socio ha sido actualizado
+                    payload: Socio editado
+                    success: true
+        '409':
+          description: Update partner
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '87'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 18:03:50 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"57-IOSFhTU8XTnvovhzFEeRqcUNERU"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: CURP tiene conflictos
+                  payload:
+                    type: string
+                    example: El CURP ya está en uso
+                  success:
+                    type: boolean
+                    example: false
+              examples:
+                Update partner:
+                  value:
+                    message: CURP tiene conflictos
+                    payload: El CURP ya está en uso
+                    success: false
+    parameters:
+      - name: partnerId
+        in: path
+        required: true
+        schema:
+          type: string
+  /partner/filter:
+    post:
+      tags:
+        - Partner
+      summary: Read partners with filters
+      description: Read partners with filters
+      operationId: readPartnersWithFilters
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dateFormat:
+                  type: string
+                  example: DD/MM/YYYY
+                filters:
+                  type: object
+                  properties:
+                    $or:
+                      type: array
+                      items:
+                        type: string
+                        example: userId.name
+                      example:
+                        - userId.name
+                limit:
+                  type: number
+                  example: 5
+                page:
+                  type: number
+                  example: 1
+                search:
+                  type: string
+                  example: señor
+                selects:
+                  type: object
+                  properties:
+                    _id:
+                      type: number
+                      example: 1
+                    bankId.name:
+                      type: number
+                      example: 1
+                    createdAt:
+                      type: number
+                      example: 1
+                    curp:
+                      type: number
+                      example: 1
+                    userId.name:
+                      type: number
+                      example: 1
+                sort:
+                  type: object
+                  properties:
+                    createdAt:
+                      type: number
+                      example: -1
+            example:
+              dateFormat: DD/MM/YYYY
+              filters:
+                $or:
+                  - userId.name
+              limit: 5
+              page: 1
+              search: señor
+              selects:
+                _id: 1
+                bankId.name: 1
+                createdAt: 1
+                curp: 1
+                userId.name: 1
+              sort:
+                createdAt: -1
+      responses:
+        '200':
+          description: Read partners with filters
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '609'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 18:04:27 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"261-DvYvUde2zxyQOijvg+BO4qxLVZM"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Multiple "Socios" items were found
+                  payload:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            _id:
+                              type: string
+                              example: 611561c7f1f2ed4778f601ec
+                            createdAt:
+                              type: string
+                              example: '2021-08-12T18:00:39.089Z'
+                            curp:
+                              type: string
+                              example: mamd900415hnllzm12
+                            userId:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                  example: marcos perez correa
+                        example:
+                          - _id: 611561c7f1f2ed4778f601ec
+                            createdAt: '2021-08-12T18:00:39.089Z'
+                            curp: mamd900415hnllzm12
+                            userId:
+                              name: marcos perez correa
+                          - _id: 61119dd4779b2926b47be2e2
+                            createdAt: '2021-08-09T21:27:48.262Z'
+                            curp: mamd900415hnllzm11
+                            userId:
+                              name: maria renteria
+                          - _id: 61119d64779b2926b47be2ae
+                            createdAt: '2021-08-09T21:25:56.101Z'
+                            curp: vamd900415hnllzm10
+                            userId:
+                              name: jose dominga valles mesa
+                      pagination:
+                        type: object
+                        properties:
+                          currentPage:
+                            type: number
+                            example: 1
+                          hasNext:
+                            type: boolean
+                            example: false
+                          hasPrevious:
+                            type: boolean
+                            example: false
+                          totalItems:
+                            type: number
+                            example: 3
+                          totalPages:
+                            type: number
+                            example: 1
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Read partners with filters:
+                  value:
+                    message: Multiple "Socios" items were found
+                    payload:
+                      data:
+                        - _id: 611561c7f1f2ed4778f601ec
+                          createdAt: '2021-08-12T18:00:39.089Z'
+                          curp: mamd900415hnllzm12
+                          userId:
+                            name: marcos perez correa
+                        - _id: 61119dd4779b2926b47be2e2
+                          createdAt: '2021-08-09T21:27:48.262Z'
+                          curp: mamd900415hnllzm11
+                          userId:
+                            name: maria renteria
+                        - _id: 61119d64779b2926b47be2ae
+                          createdAt: '2021-08-09T21:25:56.101Z'
+                          curp: vamd900415hnllzm10
+                          userId:
+                            name: jose dominga valles mesa
+                      pagination:
+                        currentPage: 1
+                        hasNext: false
+                        hasPrevious: false
+                        totalItems: 3
+                        totalPages: 1
+                    success: true
+  /partner/{partnerId}/vehicle/batch:
+    post:
+      tags:
+        - Partner
+      summary: Create vehicle batch
+      description: Create vehicle batch
+      operationId: createVehicleBatch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                vehicles:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      carPlate:
+                        type: string
+                        example: FGT584L
+                      type:
+                        type: string
+                        example: automovil
+                  example:
+                    - carPlate: FGT584L
+                      type: automovil
+                    - carPlate: AD745Y
+                      type: Van
+            example:
+              vehicles:
+                - carPlate: FGT584L
+                  type: automovil
+                - carPlate: AD745Y
+                  type: Van
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: partnerId
+        in: path
+        required: true
+        schema:
+          type: string
+  /partner/{partnerId}/vehicle:
+    post:
+      tags:
+        - Partner
+      summary: Create vehicle
+      description: Create vehicle
+      operationId: createVehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carPlate:
+                  type: string
+                  example: ABC-123-2
+                type:
+                  type: string
+                  example: van
+            example:
+              carPlate: ABC-123-2
+              type: van
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: partnerId
+        in: path
+        required: true
+        schema:
+          type: string
+  /partner/{partnerId}/vehicle/{vehicleId}:
+    delete:
+      tags:
+        - Partner
+      summary: Delete vehicle
+      description: Delete vehicle
+      operationId: deleteVehicle1
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: partnerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: vehicleId
+        in: path
+        required: true
+        schema:
+          type: string
+  /users:
+    post:
+      tags:
+        - User
+      summary: Read all users
+      description: Read all users
+      operationId: readAllUsers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dateFormat:
+                  type: string
+                  example: DD/MM/YYYY
+                filters:
+                  type: object
+                  properties:
+                    $or:
+                      type: array
+                      items:
+                        type: string
+                        example: name
+                      example:
+                        - name
+                    type:
+                      type: string
+                      example: partner
+                limit:
+                  type: number
+                  example: 5
+                page:
+                  type: number
+                  example: 1
+                search:
+                  type: string
+                  example: ''
+                sort:
+                  type: object
+                  properties:
+                    createdAt:
+                      type: number
+                      example: -1
+            example:
+              dateFormat: DD/MM/YYYY
+              filters:
+                $or:
+                  - name
+                type: partner
+              limit: 5
+              page: 1
+              search: ''
+              sort:
+                createdAt: -1
+      responses:
+        '200':
+          description: ''
+  /users/bulk/disable:
+    post:
+      tags:
+        - User
+      summary: Disable users bulk
+      description: Disable users bulk
+      operationId: disableUsersBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+                example: 6142491551d3cb036bae68f6
+              example:
+                - 6142491551d3cb036bae68f6
+                - 6111625c2f6cc6a6574f14f8
+                - 615cb194cd6b624c74301b47
+                - 615cb194cd6b624c74301b4
+            example:
+              - 6142491551d3cb036bae68f6
+              - 6111625c2f6cc6a6574f14f8
+              - 615cb194cd6b624c74301b47
+              - 615cb194cd6b624c74301b4
+      responses:
+        '200':
+          description: ''
+  /users/bulk/reactivate:
+    post:
+      tags:
+        - User
+      summary: Reactivate users bulk
+      description: Reactivate users bulk
+      operationId: reactivateUsersBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+                example: 6142491551d3cb036bae68f6
+              example:
+                - 6142491551d3cb036bae68f6
+                - 6111625c2f6cc6a6574f14f8
+                - 615cb194cd6b624c74301b47
+                - 615cb194cd6b624c74301b4
+            example:
+              - 6142491551d3cb036bae68f6
+              - 6111625c2f6cc6a6574f14f8
+              - 615cb194cd6b624c74301b47
+              - 615cb194cd6b624c74301b4
+      responses:
+        '200':
+          description: ''
+  /login:
+    post:
+      tags:
+        - Session
+      summary: Login
+      description: Login
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: jose.valles+1@onephase.com
+                password:
+                  type: string
+                  example: test4321
+            example:
+              email: jose.valles+1@onephase.com
+              password: test4321
+      responses:
+        '200':
+          description: Login
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '1461'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Tue, 10 Aug 2021 17:38:12 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"5b5-c3NyZkfuSeo8FhEXdl6XrOPIFpY"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User encontrado
+                  payload:
+                    type: object
+                    properties:
+                      refreshToken:
+                        type: string
+                        example: >-
+                          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjIifQ.eyJyZWZyZXNoIjp0cnVlLCJpYXQiOjE2Mjg2MTcwOTIsIm5iZiI6MTYyODYxNzA5MiwiZXhwIjoxNjYwMTc0NjkyLCJhdWQiOiI2MTU3MDE3Mjg0MTcyMjA3MjUxNTI3ODkwMzUxMzgwMSIsImlzcyI6Ikx6WER2c2ZwUDAxdmdab0F4RVBNVHVHeHFoZXBuV05kIiwianRpIjoibXhVOWRRTk5qekdlZU1LSmRPZkZsTFJNU1U1cXdVRzY1ajduVFdFc0FWNjNUQ0czd0tyZ1A5d0ZSUUdxSTlpRXozVTVUWExRbnVmbFVPdm9FclFGZnYifQ.-ujQHXeNVQk7tJ4aA1oxcQ2ni9GJG8F7mIzFX9Sa_oQ
+                      user:
+                        type: object
+                        properties:
+                          _id:
+                            type: string
+                            example: 61115ca22f6cc6a6574f14f7
+                          accessToken:
+                            type: string
+                            example: >-
+                              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEifQ.eyJ1c2VySWQiOiI2MTExNWNhMjJmNmNjNmE2NTc0ZjE0ZjciLCJpYXQiOjE2Mjg2MTcwOTIsIm5iZiI6MTYyODYxNzA5MiwiZXhwIjoxNjI5OTEzMDkyLCJhdWQiOiI2MTU3MDE3Mjg0MTcyMjA3MjUxNTI3ODkwMzUxMzgwMSIsImlzcyI6Ikx6WER2c2ZwUDAxdmdab0F4RVBNVHVHeHFoZXBuV05kIiwianRpIjoibXhVOWRRTk5qekdlZU1LSmRPZkZsTFJNU1U1cXdVRzY1ajduVFdFc0FWNjNUQ0czd0tyZ1A5d0ZSUUdxSTlpRXozVTVUWExRbnVmbFVPdm9FclFGZnYifQ.yfIV1hmUIQOIIJrvkDmHIReUFWj2ic2iApKYk8cd5uw
+                          confirmed:
+                            type: boolean
+                            example: true
+                          email:
+                            type: string
+                            example: enrique.martindelcampo@onephase.com
+                          firstName:
+                            type: string
+                            example: Enrique Martin
+                          jwtid:
+                            type: string
+                            example: >-
+                              mxU9dQNNjzGeeMKJdOfFlLRMSU5qwUG65j7nTWEsAV63TCG3wKrgP9wFRQGqI9iEz3U5TXLQnuflUOvoErQFfv
+                          lastName:
+                            type: string
+                            example: Del Campo
+                          role:
+                            type: object
+                            properties:
+                              _id:
+                                type: string
+                                example: 5f56beed42a3ec3f2b61923f
+                              code:
+                                type: string
+                                example: RL000
+                              name:
+                                type: string
+                                example: ADMIN
+                              resource:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    accessTo:
+                                      type: string
+                                      example: User
+                                    permissions:
+                                      type: array
+                                      items:
+                                        type: string
+                                        example: all-resources
+                                      example:
+                                        - all-resources
+                                example:
+                                  - accessTo: User
+                                    permissions:
+                                      - all-resources
+                                  - accessTo: Driver
+                                    permissions:
+                                      - all-resources
+                                  - accessTo: Partner
+                                    permissions:
+                                      - all-resources
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Login:
+                  value:
+                    message: User encontrado
+                    payload:
+                      refreshToken: >-
+                        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjIifQ.eyJyZWZyZXNoIjp0cnVlLCJpYXQiOjE2Mjg2MTcwOTIsIm5iZiI6MTYyODYxNzA5MiwiZXhwIjoxNjYwMTc0NjkyLCJhdWQiOiI2MTU3MDE3Mjg0MTcyMjA3MjUxNTI3ODkwMzUxMzgwMSIsImlzcyI6Ikx6WER2c2ZwUDAxdmdab0F4RVBNVHVHeHFoZXBuV05kIiwianRpIjoibXhVOWRRTk5qekdlZU1LSmRPZkZsTFJNU1U1cXdVRzY1ajduVFdFc0FWNjNUQ0czd0tyZ1A5d0ZSUUdxSTlpRXozVTVUWExRbnVmbFVPdm9FclFGZnYifQ.-ujQHXeNVQk7tJ4aA1oxcQ2ni9GJG8F7mIzFX9Sa_oQ
+                      user:
+                        _id: 61115ca22f6cc6a6574f14f7
+                        accessToken: >-
+                          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEifQ.eyJ1c2VySWQiOiI2MTExNWNhMjJmNmNjNmE2NTc0ZjE0ZjciLCJpYXQiOjE2Mjg2MTcwOTIsIm5iZiI6MTYyODYxNzA5MiwiZXhwIjoxNjI5OTEzMDkyLCJhdWQiOiI2MTU3MDE3Mjg0MTcyMjA3MjUxNTI3ODkwMzUxMzgwMSIsImlzcyI6Ikx6WER2c2ZwUDAxdmdab0F4RVBNVHVHeHFoZXBuV05kIiwianRpIjoibXhVOWRRTk5qekdlZU1LSmRPZkZsTFJNU1U1cXdVRzY1ajduVFdFc0FWNjNUQ0czd0tyZ1A5d0ZSUUdxSTlpRXozVTVUWExRbnVmbFVPdm9FclFGZnYifQ.yfIV1hmUIQOIIJrvkDmHIReUFWj2ic2iApKYk8cd5uw
+                        confirmed: true
+                        email: enrique.martindelcampo@onephase.com
+                        firstName: Enrique Martin
+                        jwtid: >-
+                          mxU9dQNNjzGeeMKJdOfFlLRMSU5qwUG65j7nTWEsAV63TCG3wKrgP9wFRQGqI9iEz3U5TXLQnuflUOvoErQFfv
+                        lastName: Del Campo
+                        role:
+                          _id: 5f56beed42a3ec3f2b61923f
+                          code: RL000
+                          name: ADMIN
+                          resource:
+                            - accessTo: User
+                              permissions:
+                                - all-resources
+                            - accessTo: Driver
+                              permissions:
+                                - all-resources
+                            - accessTo: Partner
+                              permissions:
+                                - all-resources
+                    success: true
+  /job-title:
+    get:
+      tags:
+        - JobTitle
+      summary: Read job titles
+      description: Read job titles
+      operationId: readJobTitles
+      responses:
+        '200':
+          description: job title list
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '820'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Fri, 13 Aug 2021 14:30:53 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"334-0yGCEdApSK/U15KpNMh+haQTwkQ"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Puesto encontrado
+                  payload:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        __v:
+                          type: number
+                          example: 0
+                        _id:
+                          type: string
+                          example: 6112d709ec35930a6c724fb8
+                        amount:
+                          type: number
+                          example: 600
+                        createdAt:
+                          type: string
+                          example: '2021-08-10T19:44:09.978Z'
+                        name:
+                          type: string
+                          example: chofer
+                        updatedAt:
+                          type: string
+                          example: '2021-08-10T19:44:09.978Z'
+                    example:
+                      - __v: 0
+                        _id: 6112d709ec35930a6c724fb8
+                        amount: 600
+                        createdAt: '2021-08-10T19:44:09.978Z'
+                        name: chofer
+                        updatedAt: '2021-08-10T19:44:09.978Z'
+                      - __v: 0
+                        _id: 6112f7507abdd063a4fbc3a4
+                        amount: 800
+                        createdAt: '2021-08-10T19:44:09.978Z'
+                        name: coordinador
+                        updatedAt: '2021-08-10T19:44:09.978Z'
+                      - __v: 0
+                        _id: 611581832e4f4052c815c21c
+                        amount: 900.15
+                        createdAt: '2021-08-12T20:16:03.952Z'
+                        name: puesto2
+                        updatedAt: '2021-08-12T20:16:03.952Z'
+                      - __v: 0
+                        _id: 611581d72e4f4052c815c228
+                        amount: 900.15
+                        createdAt: '2021-08-12T20:17:27.278Z'
+                        name: puesto
+                        updatedAt: '2021-08-12T20:17:27.278Z'
+                      - __v: 0
+                        _id: 6115a8c97abdd063a4fbc3a5
+                        amount: 600
+                        createdAt: '2021-08-10T19:44:09.978Z'
+                        name: chofer
+                        updatedAt: '2021-08-10T19:44:09.978Z'
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                job title list:
+                  value:
+                    message: Puesto encontrado
+                    payload:
+                      - __v: 0
+                        _id: 6112d709ec35930a6c724fb8
+                        amount: 600
+                        createdAt: '2021-08-10T19:44:09.978Z'
+                        name: chofer
+                        updatedAt: '2021-08-10T19:44:09.978Z'
+                      - __v: 0
+                        _id: 6112f7507abdd063a4fbc3a4
+                        amount: 800
+                        createdAt: '2021-08-10T19:44:09.978Z'
+                        name: coordinador
+                        updatedAt: '2021-08-10T19:44:09.978Z'
+                      - __v: 0
+                        _id: 611581832e4f4052c815c21c
+                        amount: 900.15
+                        createdAt: '2021-08-12T20:16:03.952Z'
+                        name: puesto2
+                        updatedAt: '2021-08-12T20:16:03.952Z'
+                      - __v: 0
+                        _id: 611581d72e4f4052c815c228
+                        amount: 900.15
+                        createdAt: '2021-08-12T20:17:27.278Z'
+                        name: puesto
+                        updatedAt: '2021-08-12T20:17:27.278Z'
+                      - __v: 0
+                        _id: 6115a8c97abdd063a4fbc3a5
+                        amount: 600
+                        createdAt: '2021-08-10T19:44:09.978Z'
+                        name: chofer
+                        updatedAt: '2021-08-10T19:44:09.978Z'
+                    success: true
+    post:
+      tags:
+        - JobTitle
+      summary: New job title
+      description: New job title
+      operationId: newJobTitle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: string
+                  example: '900.15'
+                name:
+                  type: string
+                  example: chofer 5
+            example:
+              amount: '900.15'
+              name: chofer 5
+      responses:
+        '200':
+          description: Crea puesto
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '209'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 20:17:27 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"d1-OyLsAjCUF/iAaWy+JaOcqgZnOGo"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Puesto encontrado
+                  payload:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 611581d72e4f4052c815c228
+                      amount:
+                        type: number
+                        example: 900.15
+                      createdAt:
+                        type: string
+                        example: '2021-08-12T20:17:27.278Z'
+                      name:
+                        type: string
+                        example: puesto
+                      updatedAt:
+                        type: string
+                        example: '2021-08-12T20:17:27.278Z'
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Crea puesto:
+                  value:
+                    message: Puesto encontrado
+                    payload:
+                      __v: 0
+                      _id: 611581d72e4f4052c815c228
+                      amount: 900.15
+                      createdAt: '2021-08-12T20:17:27.278Z'
+                      name: puesto
+                      updatedAt: '2021-08-12T20:17:27.278Z'
+                    success: true
+        '409':
+          description: Puesto a existe
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '104'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 20:17:33 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"68-Hp5GcB7U1f9iZ/89Yw6Hvgh2e/I"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Puesto tiene conflictos
+                  payload:
+                    type: string
+                    example: Ya existe un puesto llamado "puesto"
+                  success:
+                    type: boolean
+                    example: false
+              examples:
+                Puesto a existe:
+                  value:
+                    message: Puesto tiene conflictos
+                    payload: Ya existe un puesto llamado "puesto"
+                    success: false
+  /job-title/valids:
+    get:
+      tags:
+        - JobTitle
+      summary: Read valids job titles
+      description: Read valids job titles
+      operationId: readValidsJobTitles
+      responses:
+        '200':
+          description: Recupera listado correcto
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '208'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 21:45:27 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"d0-yPrkwJlBAIJroV1xF7rkr+FmPXg"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Puestos validos encontrado
+                  payload:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 61158eb2277c8a21447d04b1
+                      jobTitles:
+                        type: array
+                        items:
+                          type: string
+                          example: chofer
+                        example:
+                          - chofer
+                          - coordinador
+                          - administrador
+                          - chofer-moto
+                      numbers:
+                        type: array
+                        items:
+                          type: number
+                          example: 1
+                        example:
+                          - 1
+                          - 2
+                          - 3
+                          - 4
+                          - 5
+                          - 6
+                          - 7
+                          - 8
+                          - 9
+                          - 10
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Recupera listado correcto:
+                  value:
+                    message: Puestos validos encontrado
+                    payload:
+                      __v: 0
+                      _id: 61158eb2277c8a21447d04b1
+                      jobTitles:
+                        - chofer
+                        - coordinador
+                        - administrador
+                        - chofer-moto
+                      numbers:
+                        - 1
+                        - 2
+                        - 3
+                        - 4
+                        - 5
+                        - 6
+                        - 7
+                        - 8
+                        - 9
+                        - 10
+                    success: true
+  /job-title/{jobTitleId}:
+    delete:
+      tags:
+        - JobTitle
+      summary: Remove job title
+      description: Remove job title
+      operationId: removeJobTitle
+      responses:
+        '200':
+          description: Deleted
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '46'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Fri, 13 Aug 2021 14:29:49 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"2e-RVRNlYhX+a7yfOHwxpIi4Y/qY0E"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Puesto encontrado
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Deleted:
+                  value:
+                    message: Puesto encontrado
+                    success: true
+        '409':
+          description: Job title not exist
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '105'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Fri, 13 Aug 2021 14:29:00 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"69-svX8+wr7n1FOYD/XqgXy/FruBoY"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Puesto tiene conflictos
+                  payload:
+                    type: string
+                    example: El puesto que quiere eliminar no existe
+                  success:
+                    type: boolean
+                    example: false
+              examples:
+                Job title not exist:
+                  value:
+                    message: Puesto tiene conflictos
+                    payload: El puesto que quiere eliminar no existe
+                    success: false
+    patch:
+      tags:
+        - JobTitle
+      summary: Update job title
+      description: Update job title
+      operationId: updateJobTitle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: number
+                  example: 100
+                name:
+                  type: string
+                  example: chofer 5
+            example:
+              amount: 100
+              name: chofer 5
+      responses:
+        '200':
+          description: Creado correctamente
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '223'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 22:52:56 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"df-H7HPF0j/YcVsJKJAgmIfRXV6tIE"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Puesto ha sido actualizado
+                  payload:
+                    type: object
+                    properties:
+                      __v:
+                        type: number
+                        example: 0
+                      _id:
+                        type: string
+                        example: 61159090ae29ab3408c4f9a7
+                      amount:
+                        type: number
+                        example: 1000
+                      createdAt:
+                        type: string
+                        example: '2021-08-12T21:20:16.253Z'
+                      name:
+                        type: string
+                        example: administrador
+                      updatedAt:
+                        type: string
+                        example: '2021-08-12T22:52:56.330Z'
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                Creado correctamente:
+                  value:
+                    message: Puesto ha sido actualizado
+                    payload:
+                      __v: 0
+                      _id: 61159090ae29ab3408c4f9a7
+                      amount: 1000
+                      createdAt: '2021-08-12T21:20:16.253Z'
+                      name: administrador
+                      updatedAt: '2021-08-12T22:52:56.330Z'
+                    success: true
+        '409':
+          description: Nombre duplicado
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '106'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Thu, 12 Aug 2021 22:54:58 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"6a-8fr4ZwBhKl51SDYCU26ZAVHIwkQ"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Puesto tiene conflictos
+                  payload:
+                    type: string
+                    example: Ya existe un puesto llamado "chofer 4"
+                  success:
+                    type: boolean
+                    example: false
+              examples:
+                Nombre duplicado:
+                  value:
+                    message: Puesto tiene conflictos
+                    payload: Ya existe un puesto llamado "chofer 4"
+                    success: false
+    parameters:
+      - name: jobTitleId
+        in: path
+        required: true
+        schema:
+          type: string
+  /vehicle/{vehicleId}:
+    patch:
+      tags:
+        - Vehicle
+      summary: Update vehicle
+      description: Update vehicle
+      operationId: updateVehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carPlate:
+                  type: string
+                  example: abc123b
+                type:
+                  type: string
+                  example: van
+            example:
+              carPlate: abc123b
+              type: van
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: vehicleId
+        in: path
+        required: true
+        schema:
+          type: string
+  /vehicle/filter:
+    post:
+      tags:
+        - Vehicle
+      summary: Read vehicles with filters
+      description: Read vehicles with filters
+      operationId: readVehiclesWithFilters
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dateFormat:
+                  type: string
+                  example: DD/MM/YYYY
+                filters:
+                  type: object
+                  properties:
+                    isAssigned:
+                      type: boolean
+                      example: true
+                    partner:
+                      type: object
+                      properties:
+                        $exists:
+                          type: boolean
+                          example: true
+                limit:
+                  type: number
+                  example: 10
+                page:
+                  type: number
+                  example: 1
+                search:
+                  type: string
+                  example: ''
+                sort:
+                  type: object
+                  properties:
+                    createdAt:
+                      type: number
+                      example: 1
+            example:
+              dateFormat: DD/MM/YYYY
+              filters:
+                isAssigned: true
+                partner:
+                  $exists: true
+              limit: 10
+              page: 1
+              search: ''
+              sort:
+                createdAt: 1
+      responses:
+        '200':
+          description: ''
+  /banks:
+    get:
+      tags:
+        - Bank
+      summary: Read banks
+      description: Read banks
+      operationId: readBanks
+      responses:
+        '200':
+          description: ''
+  /services/clients:
+    get:
+      tags:
+        - Service
+      summary: Read clients
+      description: Read clients
+      operationId: readClients
+      responses:
+        '200':
+          description: ''
+  /services:
+    get:
+      tags:
+        - Service
+      summary: Read services
+      description: Read services
+      operationId: readServices
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Service
+      summary: Create service
+      description: Create service
+      operationId: createService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: string
+                  example: '550'
+                clientId:
+                  type: string
+                  example: 6112d6d7a79250505cdf9974
+                name:
+                  type: string
+                  example: Ruta rapida
+            example:
+              amount: '550'
+              clientId: 6112d6d7a79250505cdf9974
+              name: Ruta rapida
+      responses:
+        '200':
+          description: ''
+  /services/{serviceId}:
+    delete:
+      tags:
+        - Service
+      summary: Delete service
+      description: Delete service
+      operationId: deleteService
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+        - Service
+      summary: Update service
+      description: Update service
+      operationId: updateService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: number
+                  example: 500
+                clientId:
+                  type: string
+                  example: 6112d6d7a79250505cdf9974
+                name:
+                  type: string
+                  example: ruta rapida
+            example:
+              amount: 500
+              clientId: 6112d6d7a79250505cdf9974
+              name: ruta rapida
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: serviceId
+        in: path
+        required: true
+        schema:
+          type: string
+  /route:
+    post:
+      tags:
+        - Route
+      summary: Create route
+      description: Create route
+      operationId: createRoute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  example: 6F4S8F55
+                comment:
+                  type: string
+                  example: Prueba de una ruta
+                date:
+                  type: string
+                  example: '2021-12-21'
+                drivers:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      driverId:
+                        type: string
+                        example: 61841016a182f69bf60967ef
+                      percentage:
+                        type: string
+                        example: '40'
+                      vehicleId:
+                        type: string
+                        example: 6171ce9a907e08c83beec27b
+                  example:
+                    - driverId: 61841016a182f69bf60967ef
+                      percentage: '40'
+                      vehicleId: 6171ce9a907e08c83beec27b
+                serviceId:
+                  type: string
+                  example: 615de4338aa8323dbc680703
+                stationId:
+                  type: string
+                  example: 61bcdd81214d100d3c4cc794
+            example:
+              code: 6F4S8F55
+              comment: Prueba de una ruta
+              date: '2021-12-21'
+              drivers:
+                - driverId: 61841016a182f69bf60967ef
+                  percentage: '40'
+                  vehicleId: 6171ce9a907e08c83beec27b
+              serviceId: 615de4338aa8323dbc680703
+              stationId: 61bcdd81214d100d3c4cc794
+      responses:
+        '200':
+          description: ''
+  /route/{routeId}:
+    get:
+      tags:
+        - Route
+      summary: Read route
+      description: Read route
+      operationId: readRoute
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+        - Route
+      summary: Delete route
+      description: Delete route
+      operationId: deleteRoute
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+        - Route
+      summary: Update route
+      description: Update route
+      operationId: updateRoute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  example: 6F4S8F55
+                comment:
+                  type: string
+                  example: Prueba de una ruta
+                date:
+                  type: string
+                  example: '2021-09-21'
+                drivers:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      driverId:
+                        type: string
+                        example: 611eab75945d6f360adb0d83
+                      percentage:
+                        example: '40'
+                        anyOf:
+                          - type: string
+                            example: '40'
+                          - type: number
+                            example: 33
+                      vehicleId:
+                        type: string
+                        example: 612ff42d6dfce1c7f48051bd
+                  example:
+                    - driverId: 611eab75945d6f360adb0d83
+                      percentage: '40'
+                      vehicleId: 612ff42d6dfce1c7f48051bd
+                    - driverId: 611d7795bb210e4b1c44a66a
+                      percentage: 33
+                      vehicleId: 61296230d3702834eef113d2
+                serviceId:
+                  type: string
+                  example: 6112d6d7a79250505cdf9976
+            example:
+              code: 6F4S8F55
+              comment: Prueba de una ruta
+              date: '2021-09-21'
+              drivers:
+                - driverId: 611eab75945d6f360adb0d83
+                  percentage: '40'
+                  vehicleId: 612ff42d6dfce1c7f48051bd
+                - driverId: 611d7795bb210e4b1c44a66a
+                  percentage: 33
+                  vehicleId: 61296230d3702834eef113d2
+              serviceId: 6112d6d7a79250505cdf9976
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: routeId
+        in: path
+        required: true
+        schema:
+          type: string
+  /route/filter:
+    post:
+      tags:
+        - Route
+      summary: Read routes
+      description: Read routes
+      operationId: readRoutes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dateFormat:
+                  type: string
+                  example: DD/MM/YYYY
+                filters:
+                  type: object
+                  properties:
+                    date:
+                      type: string
+                      example: '2021-09-21'
+                limit:
+                  type: number
+                  example: 10
+                page:
+                  type: number
+                  example: 1
+                search:
+                  type: string
+                  example: ''
+                sort:
+                  type: object
+                  properties:
+                    createdAt:
+                      type: number
+                      example: -1
+            example:
+              dateFormat: DD/MM/YYYY
+              filters:
+                date: '2021-09-21'
+              limit: 10
+              page: 1
+              search: ''
+              sort:
+                createdAt: -1
+      responses:
+        '200':
+          description: ''
+  /route/{routeId}/driver/{driverId}:
+    delete:
+      tags:
+        - Route
+      summary: Delete driver to route
+      description: Delete driver to route
+      operationId: deleteDriverToRoute
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: routeId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: driverId
+        in: path
+        required: true
+        schema:
+          type: string
+  /route/{routeId}/driver:
+    post:
+      tags:
+        - Route
+      summary: Add driver to route
+      description: Add driver to route
+      operationId: addDriverToRoute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                driverId:
+                  type: string
+                  example: 611d7795bb210e4b1c44a66a
+                percentage:
+                  type: number
+                  example: 33
+                vehicleId:
+                  type: string
+                  example: 61296230d3702834eef113d2
+            example:
+              driverId: 611d7795bb210e4b1c44a66a
+              percentage: 33
+              vehicleId: 61296230d3702834eef113d2
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: routeId
+        in: path
+        required: true
+        schema:
+          type: string
+  /route/report/by-driver:
+    get:
+      tags:
+        - Route
+      summary: Get report
+      description: Get report
+      operationId: getReport
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            example: '2022-02-01'
+          description: Start date of report
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            example: '2022-02-09'
+          description: End date of report
+      responses:
+        '200':
+          description: ''
+  /route/bulk/cancel:
+    post:
+      tags:
+        - Route
+      summary: Cancel routes bulk
+      description: Cancel routes bulk
+      operationId: cancelRoutesBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+                example: 6182b77e43fe30d83b7b02ab
+              example:
+                - 6182b77e43fe30d83b7b02ab
+                - 6182b4de95c2ae59e0800fe1
+                - 6182b77e43fe30d83b7b02a9
+                - 6182b77e43fe30d83b7b02a
+            example:
+              - 6182b77e43fe30d83b7b02ab
+              - 6182b4de95c2ae59e0800fe1
+              - 6182b77e43fe30d83b7b02a9
+              - 6182b77e43fe30d83b7b02a
+      responses:
+        '200':
+          description: ''
+  /route/bulk/template:
+    get:
+      tags:
+        - Route
+      summary: Get route template
+      description: Get route template
+      operationId: getRouteTemplate
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            example: '2021-12-16'
+          description: Start date for template
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            example: '2021-12-22'
+          description: End date for template
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Route
+      summary: Upload template
+      description: Upload template
+      operationId: uploadTemplate
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+  /period/current:
+    get:
+      tags:
+        - Payment periods
+      summary: Last payroll days
+      description: Last payroll days
+      operationId: lastPayrollDays
+      responses:
+        '200':
+          description: ''
+  /period:
+    get:
+      tags:
+        - Payment periods
+      summary: Period payroll days
+      description: Period payroll days
+      operationId: periodPayrollDays
+      parameters:
+        - name: backward
+          in: query
+          schema:
+            type: string
+            example: '-1'
+          description: Number of periods backward
+      responses:
+        '200':
+          description: ''
+  /payroll:
+    get:
+      tags:
+        - Payroll
+      summary: Read attendance
+      description: Read attendance
+      operationId: readAttendance
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            example: '2021-11-18'
+          description: Start date of attendance period
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            example: '2021-11-24'
+          description: End date of attendance period
+        - name: filter
+          in: query
+          schema:
+            type: string
+            example: jos
+          description: Text to filter attendance
+      responses:
+        '200':
+          description: ''
+  /payroll/adjustment:
+    post:
+      tags:
+        - Payroll
+      summary: Manual payroll adjustment
+      description: Manual payroll adjustment
+      operationId: manualPayrollAdjustment
+      parameters:
+        - name: period
+          in: query
+          schema:
+            type: string
+            example: '-1'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  amount:
+                    type: number
+                    example: 401
+                  driverId:
+                    type: string
+                    example: 615c80668aa8323dbc67dab9
+              example:
+                - amount: 401
+                  driverId: 615c80668aa8323dbc67dab9
+                - amount: 600
+                  driverId: 615f347cd14b46a45c6b6b0f
+            example:
+              - amount: 401
+                driverId: 615c80668aa8323dbc67dab9
+              - amount: 600
+                driverId: 615f347cd14b46a45c6b6b0f
+      responses:
+        '200':
+          description: ''
+  /payroll/report:
+    get:
+      tags:
+        - Payroll
+      summary: Get report
+      description: Get report
+      operationId: getReport1
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            example: '2021-09-02'
+          description: Start date for report
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            example: '2021-09-08'
+          description: End date for report
+      responses:
+        '200':
+          description: ''
+  /payroll/close:
+    post:
+      tags:
+        - Payroll
+      summary: Close payroll
+      description: Close payroll
+      operationId: closePayroll
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            example: '2021-10-21'
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            example: '2021-10-27'
+      responses:
+        '200':
+          description: ''
+  /payment:
+    get:
+      tags:
+        - Payments
+      summary: Read partners payments
+      description: Read partners payments
+      operationId: readPartnersPayments
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            example: '2021-10-01'
+          description: Start date of payment period
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            example: '2021-10-31'
+          description: End date of payment period
+        - name: filter
+          in: query
+          schema:
+            type: string
+            example: '990901'
+          description: Text to filter payments
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Payments
+      summary: Add partner extra amounts
+      description: Add partner extra amounts
+      operationId: addPartnerExtraAmounts
+      parameters:
+        - name: month
+          in: query
+          schema:
+            type: string
+            example: 2021-10
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  gasoline:
+                    type: number
+                    example: 700
+                  manualAdjustment:
+                    type: number
+                    example: -900
+                  partnerId:
+                    type: string
+                    example: 615c90ea8aa8323dbc67dede
+              example:
+                - gasoline: 700
+                  manualAdjustment: -900
+                  partnerId: 615c90ea8aa8323dbc67dede
+                - gasoline: 500
+                  manualAdjustment: 400
+                  partnerId: 6171cd43907e08c83beec072
+            example:
+              - gasoline: 700
+                manualAdjustment: -900
+                partnerId: 615c90ea8aa8323dbc67dede
+              - gasoline: 500
+                manualAdjustment: 400
+                partnerId: 6171cd43907e08c83beec072
+      responses:
+        '200':
+          description: ''
+  /payment/report:
+    get:
+      tags:
+        - Payments
+      summary: Get payment report
+      description: Get payment report
+      operationId: getPaymentReport
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            example: '2021-09-01'
+          description: Start date for report
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            example: '2021-09-30'
+          description: End date for report
+      responses:
+        '200':
+          description: ''
+  /payment/close:
+    post:
+      tags:
+        - Payments
+      summary: Close payments
+      description: Close payments
+      operationId: closePayments
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            example: '2021-09-01'
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            example: '2021-09-30'
+      responses:
+        '200':
+          description: ''
+  /constants:
+    get:
+      tags:
+        - Constants
+      summary: Read constants
+      description: Read constants
+      operationId: readConstants
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Constants
+      summary: Update constants
+      description: Update constants
+      operationId: updateConstants
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                baseSalary:
+                  type: number
+                  example: 1023.08
+                driverPayroll:
+                  type: number
+                  example: 500
+                imssAfore:
+                  type: number
+                  example: 84
+                partnerPayment:
+                  type: number
+                  example: 1500
+                payrollTaxPercentage:
+                  type: number
+                  example: 3
+            example:
+              baseSalary: 1023.08
+              driverPayroll: 500
+              imssAfore: 84
+              partnerPayment: 1500
+              payrollTaxPercentage: 3
+      responses:
+        '200':
+          description: ''
+  /vehicle-types:
+    get:
+      tags:
+        - Vehicle Types
+      summary: Get vehicle types
+      description: Get vehicle types
+      operationId: getVehicleTypes
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Vehicle Types
+      summary: New Vehicle Type
+      description: New Vehicle Type
+      operationId: newVehicleType
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Van Mediana
+                partnerAmount:
+                  type: string
+                  example: '1000'
+                partnerCanUse:
+                  type: string
+                  example: 'true'
+            example:
+              name: Van Mediana
+              partnerAmount: '1000'
+              partnerCanUse: 'true'
+      responses:
+        '200':
+          description: ''
+  /vehicle-types/{vehicleTypeId}:
+    delete:
+      tags:
+        - Vehicle Types
+      summary: Remove Vehicle Type
+      description: Remove Vehicle Type
+      operationId: removeVehicleType
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+        - Vehicle Types
+      summary: Update vehicle type
+      description: Update vehicle type
+      operationId: updateVehicleType
+      requestBody:
+        content:
+          text/plain:
+            example: "{\r\n    \"name\": \"automovil\",\r\n    \"partnerAmoun\": 500,\r\n    \"partnerCanUse\": true,\r\n}"
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: vehicleTypeId
+        in: path
+        required: true
+        schema:
+          type: string
+  /station:
+    get:
+      tags:
+        - Stations
+      summary: Read stations
+      description: Read stations
+      operationId: readStations
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Stations
+      summary: Create station
+      description: Create station
+      operationId: createStation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client:
+                  type: string
+                  example: 6112d6d7a79250505cdf9974
+                name:
+                  type: string
+                  example: MeLi Tamahulipas
+            example:
+              client: 6112d6d7a79250505cdf9974
+              name: MeLi Tamahulipas
+      responses:
+        '200':
+          description: ''
+  /station/{stationId}:
+    delete:
+      tags:
+        - Stations
+      summary: Delete station
+      description: Delete station
+      operationId: deleteStation
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+        - Stations
+      summary: Update station
+      description: Update station
+      operationId: updateStation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client:
+                  type: string
+                  example: 6112d6d7a79250505cdf9974
+                name:
+                  type: string
+                  example: MeLi Saltillo
+            example:
+              client: 6112d6d7a79250505cdf9974
+              name: MeLi Saltillo
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: stationId
+        in: path
+        required: true
+        schema:
+          type: string
+tags:
+  - name: Driver
+    description: Ejemplo de comantario a nivel folder
+  - name: Attendance
+  - name: Partner
+  - name: User
+  - name: Session
+  - name: JobTitle
+  - name: Vehicle
+  - name: Bank
+  - name: Service
+  - name: Route
+  - name: Payment periods
+  - name: Payroll
+  - name: Payments
+  - name: Constants
+  - name: Vehicle Types
+  - name: Stations
